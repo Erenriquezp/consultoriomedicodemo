@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.SplitMenuButton?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" spacing="10" style="-fx-background-color: #E0F7FA;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.uce.app.consultoriomedicodemo.controllers.GestionCitasController">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+    <Label style="-fx-border-color: #1a237e;" text="&gt;&gt; GESTION CITAS &lt;&lt;" textFill="#1a237e">
+        <font>
+            <Font name="Yu Gothic Light" size="20.0" />
+        </font>
+    </Label>
+    <TextField fx:id="idCitaField" promptText="ID Cita" />
+    <TextField fx:id="ciPacienteField" promptText="Cédula Paciente" />
+    <HBox prefHeight="100.0" prefWidth="200.0">
+        <children>
+            <DatePicker fx:id="fechaCitaField" promptText="Fecha de Cita" />
+        </children>
+    </HBox>
+    <TextArea fx:id="motivoField" promptText="Motivo" text="Chequeo general" />
+    <HBox spacing="10">
+        <SplitMenuButton fx:id="estadoField" text="Programada">
+            <items>
+                <MenuItem text="Programada" onAction="#cambiarEstadoProgramada" />
+                <MenuItem text="Completada" onAction="#cambiarEstadoCompletada" />
+                <MenuItem text="Cancelada" onAction="#cambiarEstadoCancelada" />
+            </items>
+        </SplitMenuButton>
+    </HBox>
+    <HBox alignment="CENTER" spacing="15.0">
+        <Button mnemonicParsing="false" onAction="#agregarCita" text="Agregar"/>
+        <Button onAction="#actualizarCita" text="Actualizar"/>
+        <Button onAction="#eliminarCita" text="Eliminar Cita"/>
+        <Button onAction="#buscarCita" text="Buscar"/>
+    </HBox>
+    <TableView fx:id="tablaCitas" prefHeight="313.0" prefWidth="482.0">
+        <columns>
+            <TableColumn fx:id="idCitaColumn" prefWidth="106.0" text="ID Cita" />
+            <TableColumn fx:id="ciPacienteColumn" prefWidth="115.0" text="Cédula Paciente" />
+            <TableColumn fx:id="fechaCitaColumn" prefWidth="128.0" text="Fecha de Cita" />
+            <TableColumn fx:id="motivoColumn" prefWidth="144" text="Motivo" />
+            <TableColumn fx:id="estadoColumn" prefWidth="110.0" text="Estado" />
+        </columns>
+    </TableView>
+    <HBox prefHeight="100.0" prefWidth="200.0">
+        <children>
+            <Label alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="25.0" prefWidth="304.0" style="-fx-underline: true;" text="&quot;Salud y bienestar en cada consulta.&quot;">
+                <font>
+                    <Font name="Symbol" size="19.0" />
+                </font>
+                <HBox.margin>
+                    <Insets left="320.0" />
+                </HBox.margin>
+            </Label>
+        </children>
+    </HBox>
+    <HBox prefHeight="100.0" prefWidth="200.0">
+        <Button fx:id="buttonRegresar" mnemonicParsing="false" onAction="#handleRegresar" prefHeight="25.0" prefWidth="72.0" text="Regresar">
+            <font>
+                <Font name="System Bold Italic" size="12.0" />
+            </font>
+        </Button>
+        <Button fx:id="buttonSalir" mnemonicParsing="false" onAction="#handleSalir" text="Salir">
+            <HBox.margin>
+                <Insets left="506.0" />
+            </HBox.margin>
+            <font>
+                <Font name="System Bold Italic" size="12.0" />
+            </font>
+        </Button>
+    </HBox>
+</VBox>

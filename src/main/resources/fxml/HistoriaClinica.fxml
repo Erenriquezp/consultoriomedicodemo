@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="651.0" spacing="10" style="-fx-background-color: #E0F7FA;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.uce.app.consultoriomedicodemo.controllers.GestionHistoriaClinicaController">
+   <padding>
+      <Insets bottom="10" left="10" right="10" top="10" />
+   </padding>
+
+   <!-- Título de la sección -->
+   <Label text="HISTORIA CLINICA" textAlignment="CENTER" textFill="#6e98c3">
+      <font>
+         <Font name="Yu Gothic Light" size="22.0" />
+      </font>
+      <graphic>
+         <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true">
+            <image>
+               <Image url="@../imagenes/consultorioLogo.png" />
+            </image>
+            <viewport>
+               <Rectangle2D />
+            </viewport>
+         </ImageView>
+      </graphic>
+   </Label>
+
+   <ScrollPane prefHeight="301.0" prefWidth="598.0">
+      <content>
+         <AnchorPane maxHeight="1500.0" maxWidth="601.0" minHeight="10.0" minWidth="10.0" prefHeight="750.0" prefWidth="601.0">
+            <children>
+               <!-- Identificadores y datos básicos -->
+               <HBox layoutX="14.0" layoutY="14.0" prefHeight="44.0" prefWidth="644.0" translateY="-5.0">
+                  <children>
+                     <TextField fx:id="idHistoriaClinicaField" promptText="ID Historia Clinica">
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                     </TextField>
+                     <TextField fx:id="cedulaMedicoField" promptText="Cédula Médico">
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                     </TextField>
+                     <TextField fx:id="cedulaPacienteField" promptText="Cédula Paciente">
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                     </TextField>
+                  </children>
+               </HBox>
+
+               <!-- Antecedentes y motivo de consulta -->
+               <VBox layoutX="14.0" layoutY="36.0" prefHeight="102.0" prefWidth="595.0">
+                  <children>
+                     <TextField fx:id="motivoConsultaField" promptText="Motivo de Consulta" translateY="5.0" />
+                     <TextField fx:id="antecedentesPersonalesField" promptText="Antecedentes Personales" translateY="10.0" />
+                     <TextField fx:id="antecedentesFamiliaresField" promptText="Antecedentes Familiares" translateY="15.0" />
+                     <TextField fx:id="enfermedadesActualesField" promptText="Enfermedades Actuales" translateY="20.0" />
+                  </children>
+               </VBox>
+
+               <!-- Revisiones -->
+               <VBox layoutX="14.0" layoutY="138.0" prefHeight="256.0" prefWidth="596.0">
+                  <children>
+                     <TextField fx:id="revisionSentidosField" promptText="Revisión Órganos de los Sentidos" translateY="25.0" />
+                     <TextField fx:id="revisionRespiratorioField" promptText="Revisión Sistema Respiratorio" translateY="30.0" />
+                     <TextField fx:id="revisionCardiovascularField" promptText="Revisión Sistema Cardiovascular" translateY="35.0" />
+                     <TextField fx:id="revisionDigestivoField" promptText="Revisión Sistema Digestivo" translateY="40.0" />
+                     <TextField fx:id="revisionGenitalesField" promptText="Revisión Órganos Genitales" translateY="45.0" />
+                     <TextField fx:id="revisionUrinarioField" promptText="Revisión Sistema Urinario" translateY="50.0" />
+                     <TextField fx:id="revisionMuscularField" promptText="Revisión Músculo Esquelético" translateY="55.0" />
+                     <TextField fx:id="revisionEndocrinoField" promptText="Revisión Sistema Endocrino" translateY="60.0" />
+                     <TextField fx:id="revisionHemoLinfaField" promptText="Revisión Sistema Hemo Linfático" translateY="65.0" />
+                     <TextField fx:id="revisionNerviosoField" promptText="Revisión Sistema Nervioso" translateY="70.0" />
+                  </children>
+               </VBox>
+
+               <!-- Medición de signos vitales -->
+               <HBox layoutX="14.0" layoutY="394.0" prefHeight="40.0" prefWidth="595.0" translateY="75.0">
+                  <children>
+                     <DatePicker fx:id="fechaMedicionField" prefHeight="31.0" prefWidth="130.0" promptText="Fecha de Medición">
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                     </DatePicker>
+                     <TextField fx:id="temperaturaField" promptText="Temperatura">
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                     </TextField>
+                     <TextField fx:id="presionArterialField" promptText="Presión Arterial">
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                     </TextField>
+                     <TextField fx:id="pulsoFrecuenciaField" promptText="Pulso/min y Frec. Respiratoria">
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                     </TextField>
+                     <TextField fx:id="pesoTallaField" promptText="Peso(kg)/Talla(cm)">
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                     </TextField>
+                  </children>
+               </HBox>
+
+               <!-- Examen físico y diagnóstico -->
+               <VBox layoutX="14.0" layoutY="424.0" prefHeight="240.0" prefWidth="597.0">
+                  <children>
+                     <TextField fx:id="examenCabezaField" promptText="Examen Físico Cabeza" translateY="80.0" />
+                     <TextField fx:id="examenCuelloField" promptText="Examen Físico Cuello" translateY="85.0" />
+                     <TextField fx:id="examenToraxField" promptText="Examen Físico Tórax" translateY="90.0" />
+                     <TextField fx:id="examenAbdomenField" promptText="Examen Físico Abdomen" translateY="95.0" />
+                     <TextField fx:id="examenPelvisField" promptText="Examen Físico Pelvis" translateY="100.0" />
+                     <TextField fx:id="examenExtremidadesField" promptText="Examen Físico Extremidades" translateY="105.0" />
+                     <TextField fx:id="descripcionDiagnosticoField" promptText="Descripción del Diagnóstico" translateY="100.0">
+                        <VBox.margin>
+                           <Insets top="10.0" />
+                        </VBox.margin>
+                     </TextField>
+                     <TextField fx:id="codigoCIEField" promptText="Código CIE del Diagnóstico" translateY="100.0">
+                        <VBox.margin>
+                           <Insets bottom="20.0" top="5.0" />
+                        </VBox.margin>
+                     </TextField>
+                  </children>
+               </VBox>
+            </children>
+         </AnchorPane>
+      </content>
+   </ScrollPane>
+
+                           <!-- Botones para acciones sobre el historial clínico -->
+   <HBox alignment="CENTER" prefHeight="37.0" prefWidth="630.0">
+      <children>
+         <Button fx:id="buttonAddHClinic" onAction="#agregarHistoriaClinica" prefWidth="100.0" text="Agregar">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Button>
+         <Button fx:id="buttonUpdateHistoriC" onAction="#actualizarHistoriaClinica" prefHeight="25.0" prefWidth="100.0" text="Actualizar" HBox.hgrow="ALWAYS">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Button>
+         <Button fx:id="buttonDelateHistoriC" onAction="#eliminarHistoriaClinica" prefWidth="100.0" text="Eliminar" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Button>
+         <Button fx:id="buttonDelateHistoriC1" onAction="#eliminarHistoriaClinica" prefWidth="100.0" text="Buscar" textAlignment="CENTER">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Button>
+      </children>
+   </HBox>
+
+                                 <!-- Tabla para mostrar el historial médico -->
+   <TableView fx:id="tablaHistorial" prefHeight="130.0" prefWidth="630.0">
+      <columns>
+         <TableColumn fx:id="columnIdHistoriaClinica" text="ID Historia Clinica" />
+         <TableColumn fx:id="columnCedulaMedico" text="Cédula Médico" />
+         <TableColumn fx:id="columnCedulaPaciente" text="Cédula Paciente" />
+         <TableColumn fx:id="columnFechaMedicion" text="Fecha Medición" />
+         <TableColumn fx:id="columnDiagnostico" text="Diagnóstico" />
+      </columns>
+   </TableView>
+
+   <!-- Mensaje de pie de página -->
+   <HBox prefHeight="20.0" prefWidth="631.0">
+      <children>
+         <Button fx:id="buttonRegresar" mnemonicParsing="false" onAction="#handleRegresar" prefHeight="25.0" prefWidth="71.0" text="Regresar">
+            <font>
+               <Font name="System Bold Italic" size="12.0" />
+            </font>
+         </Button>
+         <Button fx:id="buttonSalir" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleSalir" prefHeight="25.0" prefWidth="42.0" text="Salir" translateX="516.0">
+            <font>
+               <Font name="System Bold Italic" size="12.0" />
+            </font>
+         </Button>
+      </children>
+   </HBox>
+</VBox>
